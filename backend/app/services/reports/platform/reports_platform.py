@@ -19,16 +19,13 @@ def platform_insights(platform_name):
     fields = fields_data.get('fields', [])
 
     field_values = ','.join([field['value'] for field in fields])
-    print(f"field_values => {field_values}")
 
     accounts_data = get_accounts_data({'platform': platform_value})
     accounts = accounts_data.get('accounts', [])
 
     for account in accounts:
         account_id = account['id']
-        print(f"account_id => {account_id}")
         account_token = account['token']
-        print(f"account_token => {account_token}")
 
         try:
             insights_data = get_insights_data(platform_value, {
@@ -36,9 +33,7 @@ def platform_insights(platform_name):
                 'token': account_token,
                 'fields': field_values
             })
-            print(f"insights_data => {insights_data}")
             insights = insights_data.get('insights', [])
-            print(f"insights => {insights}")
 
             account_insights = []
 
