@@ -1,4 +1,4 @@
-from ..utils.api_requests import make_api_request
+from ...utils.api_requests import make_api_request
 
 def get_accounts_data(params):
     """Faz a requisição para o endpoint /accounts?platform={{platform}}"""
@@ -13,6 +13,8 @@ def get_insights_data(platform, params):
     Faz a requisição para o endpoint /insights usando os valores de 'id', 'token' das contas
     e o 'value' dos campos de dados, além de 'platform'
     """
+    
+    params['platform'] = platform
 
     platform_data = {'platform': platform}
 

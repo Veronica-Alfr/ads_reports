@@ -21,6 +21,7 @@ def make_api_request(endpoint, params):
     platforms = get_platforms_data()
 
     platform_param = params['platform']
+
     if not platform_param:
         raise ValueError("Platform is required in query parameters.")
     
