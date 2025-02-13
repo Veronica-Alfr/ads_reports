@@ -3,6 +3,16 @@ from ..services.api import get_platforms_data, get_accounts_data, get_fields_dat
 
 api_bp = Blueprint('api', __name__)
 
+@api_bp.route('/', methods=['GET'])
+def get_root_data():
+    data = {
+    'name': 'Verônica Alves', 
+    'email': "veagalves@gmail.com", 
+    'linkedin': 'https://www.linkedin.com/in/vealves/'
+    }
+
+    return jsonify(data), 200
+
 @api_bp.route('/<endpoint>', methods=['GET'])
 def get_data(endpoint):
     """
