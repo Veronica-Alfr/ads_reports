@@ -1,5 +1,6 @@
 from flask import Blueprint, jsonify, request
-from ..services.api import get_platforms_data, get_accounts_data, get_fields_data, get_insights_data
+from ..utils.api_requests import get_platforms_data
+from ..services.api import get_accounts_data, get_fields_data, get_insights_data
 
 api_bp = Blueprint('api', __name__)
 
