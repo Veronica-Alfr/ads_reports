@@ -26,7 +26,7 @@ def download_platform_insights_data(platform_name):
         return Response(
             csv_output,
             mimetype="text/csv",
-            headers={"Content-Disposition": f"attachment;filename={platform_name}_insights.csv"}
+            headers={"Content-Disposition": f"attachment;filename={platform_value}_insights.csv"}
         )
     except ValueError as e:
         return render_template('error.html', error=str(e)), 404
