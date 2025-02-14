@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block title %}Relatórios da Plataforma{% endblock %}
+{% block title %}Platform Reports{% endblock %}
 
 {% block content %}
     <h1>{{ data[0].platform }} Insights</h1>
@@ -8,8 +8,8 @@
     <table class="data-table">
         <thead>
             <tr>
-                <th>Responsável da Conta</th>
-                <th>Plataforma</th>
+                <th>Account Owner</th>
+                <th>Platform</th>
                 {% for key in data[0].insights[0].keys() %}
                     <th>{{ key }}</th>
                 {% endfor %}
