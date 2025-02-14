@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.data-table {
+    width: 80%;
+    border-collapse: collapse;
+    margin: 0 auto 20px auto;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.data-table th,
+.data-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border: 1px solid #f1eeee;
+}
+
+.data-table th {
+    background-color: #f3f3f3;
+    color: #333;
+    font-weight: 500;
+}
+
+.data-table tbody tr:nth-child(even) {
+    background-color: #f3f3f3;
+}
+
+.data-table tbody tr:nth-child(odd) {
+    background-color: white;
+}
+
+.data-table tbody tr:hover {
+    background-color: #efeded;
+}
+
+.data-table {
+    border-left: none;
+    border-right: none;
+}
+
+.account-table {
+    margin-bottom: 0;
+}
