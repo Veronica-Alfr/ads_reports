@@ -13,7 +13,7 @@ def get_insights_data(platform, params):
     Faz a requisição para o endpoint /insights usando os valores de 'id', 'token' das contas
     e o 'value' dos campos de dados, além de 'platform'
     """
-    
+
     params['platform'] = platform
 
     platform_data = {'platform': platform}
