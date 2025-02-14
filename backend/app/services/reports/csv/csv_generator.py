@@ -57,5 +57,5 @@ def generate_insights_summary_csv(platform_name):
     return Response(
         csv_bytes,
         mimetype="text/csv",
-        headers={"Content-Disposition": f"attachment;filename={platform_name}_summary_insights.csv"}
+        headers={"Content-Disposition": f"attachment;filename={platform_value}_summary_insights.csv"}
     )
