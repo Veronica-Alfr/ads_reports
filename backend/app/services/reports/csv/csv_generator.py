@@ -112,5 +112,5 @@ def generate_collapsed_insights_csv():
     return Response(
         csv_bytes,
         mimetype="text/csv",
-        headers={"Content-Disposition": "attachment;filename=collapsed_platforms_insights.csv"}
+        headers={"Content-Disposition": "attachment;filename=summary_platforms_insights.csv"}
     )

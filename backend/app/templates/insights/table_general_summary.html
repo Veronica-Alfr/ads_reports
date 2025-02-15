@@ -25,4 +25,10 @@
             {% endfor %}
         </tbody>
     </table>
+
+    <div class="btn-container">
+        <a href="{{ url_for('general_reports.download_summary_insights_data') }}" class="download-btn">
+            Download CSV
+        </a>
+    </div>
 {% endblock %}
