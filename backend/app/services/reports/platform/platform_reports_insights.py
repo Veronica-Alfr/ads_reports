@@ -4,7 +4,6 @@ from ...API.api_stract import get_accounts_data, get_fields_data, get_insights_d
 from ....utils.api_requests import get_platforms_data
 
 def platform_insights(platform_key_value):
-    print('platform_name on platform_insights(platform_name) =>', platform_key_value)
     platforms = get_platforms_data()
 
     platform = next((p for p in platforms if p['value'] == platform_key_value), None)

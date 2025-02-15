@@ -1,0 +1,46 @@
+{% extends "bases/base.html" %}
+
+{% block title %}General Reports{% endblock %}
+
+{% block content %}
+    <h1>General Reports</h1>
+    
+    <table class="data-table">
+        <thead>
+            <tr>
+                <th>Account Owner</th>
+                <th>Platform</th>
+                <th>Ad Name</th>
+                <th>Clicks</th>
+                <th>Impressions</th>
+                <th>Spend</th>
+                <th>Country</th>
+                <th>Status</th>
+                <th>Cost per Click</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for account in data %}
+                {% for insight in account.insights %}
+                    <tr>
+                        <td>{{ account.account_name }}</td>
+                        <td>{{ account.platform }}</td>
+                        <td>{{ insight['Ad Name'] }}</td>
+                        <td>{{ insight['Clicks'] }}</td>
+                        <td>{{ insight['Impressions'] }}</td>
+                        <td>{{ insight['Spend'] }}</td>
+                        <td>{{ insight['Country'] }}</td>
+                        <td>{{ insight['Status'] }}</td>
+                        <td>
+                            {% if insight['Clicks'] and insight['Spend'] %}
+                                {{ (insight['Spend'] / insight['Clicks'])|round(2) }}
+                            {% else %}
+                                N/A
+                            {% endif %}
+                        </td>
+                    </tr>
+                {% endfor %}
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
