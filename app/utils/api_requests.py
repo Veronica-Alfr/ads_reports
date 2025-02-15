@@ -2,7 +2,6 @@ import requests
 from ..config import Config
 
 def get_platforms_data():
-    """Faz a requisição para o endpoint /platforms e armazena as plataformas"""
     if not hasattr(get_platforms_data, "platform_cache"):
         headers = {
             'Authorization': f'{Config.STRACT_API_TOKEN}',
@@ -16,8 +15,6 @@ def get_platforms_data():
     return get_platforms_data.platform_cache
 
 def make_api_request(endpoint, params):
-    """Função genérica para fazer requisições GET para qualquer endpoint"""
-
     platforms = get_platforms_data()
 
     platform_param = params['platform']

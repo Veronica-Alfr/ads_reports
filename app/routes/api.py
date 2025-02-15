@@ -6,9 +6,6 @@ api_bp = Blueprint('api', __name__)
 
 @api_bp.route('/<endpoint>', methods=['GET'])
 def get_data(endpoint):
-    """
-    Endpoint genérico para fazer requisições com parâmetros dinâmicos.
-    """
     params = request.args.to_dict()
 
     if 'platform' not in params and endpoint != 'platforms':
