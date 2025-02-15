@@ -1,6 +1,8 @@
 <main>
   <h1 align="center">Relatórios de Anúncios</h1>
 
+  ![GA4 Insights](app/static/images/ga4_insights_img.jpg)
+
   <p>
     O projeto faz a consumação da API Stract para gerar relatórios de insights dos anúncios de grandes plataformas.
   </p>
