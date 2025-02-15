@@ -26,7 +26,6 @@ def get_general_summary():
         data = get_collapsed_platforms_insights()
         return render_template('insights/table_general_summary.html', data=data)
     except Exception as e:
-        print('ERROR =>', e)
         return render_template('errors/error404.html', error=str(e)), 404
     
 @general_reports_bp.route('/resumo/download_summary_insights_csv', methods=['GET'])

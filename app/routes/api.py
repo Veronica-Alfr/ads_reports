@@ -10,8 +10,6 @@ def get_data(endpoint):
 
     if 'platform' not in params and endpoint != 'platforms':
         return jsonify({'error': 'Platform is required'}), 400
-    
-    # Conferir os parâmetros de entrada permitidos por endpoint
 
     try:
         if endpoint == 'platforms':
