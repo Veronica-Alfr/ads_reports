@@ -1,0 +1,34 @@
+{% extends "bases/base.html" %}
+
+{% block title %}General Summary{% endblock %}
+
+{% block content %}
+    <h1>General Summary</h1>
+
+    <table class="data-table">
+        <thead>
+            <tr>
+                <th>Platform</th>
+                {% for column in data[0]['insights'].keys() %}
+                    <th>{{ column }}</th>
+                {% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+            {% for platform in data %}
+                <tr>
+                    <td>{{ platform['platform'] }}</td>
+                    {% for value in platform['insights'].values() %}
+                        <td>{{ value }}</td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <div class="btn-container">
+        <a href="{{ url_for('general_reports.download_summary_insights_data') }}" class="download-btn">
+            Download CSV
+        </a>
+    </div>
+{% endblock %}

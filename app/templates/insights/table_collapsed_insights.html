@@ -1,0 +1,36 @@
+{% extends "bases/base.html" %}
+
+{% block title %}Platform Summary{% endblock %}
+
+{% block content %}
+    <h1>{{ data[0].platform }} Summary</h1>
+    
+    <table class="data-table">
+        <thead>
+            <tr>
+                <th>Account Owner</th>
+                <th>Platform</th>
+                {% for key in data[0].insights.keys() %}
+                    <th>{{ key }}</th>
+                {% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+            {% for account in data %}
+                <tr>
+                    <td>{{ account.account_name }}</td>
+                    <td>{{ account.platform }}</td>
+                    {% for value in account.insights.values() %}
+                        <td>{{ value }}</td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <div class="btn-container">
+        <a href="{{ url_for('reports_platform.download_collapsed_platform_data', platform_name=data[0].platform) }}" class="download-btn">
+            Download CSV
+        </a>
+    </div>
+{% endblock %}

@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 2rem;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.data-table {
+    width: 80%;
+    border-collapse: collapse;
+    margin: 0 auto 2rem auto;
+    background-color: #fff;
+    box-shadow: 0 0.25rem 0.375rem rgba(0, 0, 0, 0.1);
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+.data-table th,
+.data-table td {
+    padding: 0.75rem 1rem;
+    text-align: left;
+    border: 1px solid #f1eeee;
+}
+
+.data-table th {
+    background-color: #f3f3f3;
+    color: #333;
+    font-weight: 500;
+}
+
+.data-table tbody tr:nth-child(even) {
+    background-color: #f3f3f3;
+}
+
+.data-table tbody tr:nth-child(odd) {
+    background-color: white;
+}
+
+.data-table tbody tr:hover {
+    background-color: #efeded;
+}
+
+.data-table {
+    border-left: none;
+    border-right: none;
+}
+
+.account-table {
+    margin-bottom: 0;
+}
+
+.btn-container {
+    width: 90%;
+    display: flex;
+    justify-content: end;
+}
+
+.download-btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #fff;
+    background-color: #000;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.2);
+}
+
+.download-btn:hover {
+    background-color: #333;
+    transform: translateY(-2px);
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.3);
+}
+
+.download-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.2);
+}
