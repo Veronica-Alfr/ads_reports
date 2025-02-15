@@ -3,7 +3,8 @@ import io
 from flask import Response
 from ....utils.get_platform_value import get_platform_value_by_name
 from ...reports.platform.platform_reports_insights import platform_insights, collapsed_platform_insights
-from ...reports.general.general_reports_insights import get_all_platforms_insights
+from ...reports.general.general_reports_insights import get_all_platforms_insights, get_collapsed_platforms_insights
+
 
 def generate_csv_insights(platform_name):
     platform_value = get_platform_value_by_name(platform_name)
@@ -83,4 +84,33 @@ def generate_all_insights_csv():
         csv_bytes,
         mimetype="text/csv",
         headers={"Content-Disposition": "attachment;filename=all_platforms_insights.csv"}
+    )
+
+def generate_collapsed_insights_csv():
+    collapsed_data = get_collapsed_platforms_insights()
+
+    if collapsed_data:
+        insight_columns = list(collapsed_data[0]['insights'].keys())
+    else:
+        insight_columns = []
+
+    headers = ['Platform'] + insight_columns
+
+    output = io.StringIO()
+    writer = csv.writer(output)
+
+    writer.writerow(headers)
+
+    for account in collapsed_data:
+        row = [account['platform']]
+        for column in insight_columns:
+            row.append(account['insights'].get(column, ""))
+        writer.writerow(row)
+
+    csv_bytes = output.getvalue().encode('utf-8')
+
+    return Response(
+        csv_bytes,
+        mimetype="text/csv",
+        headers={"Content-Disposition": "attachment;filename=collapsed_platforms_insights.csv"}
     )

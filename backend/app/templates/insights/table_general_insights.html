@@ -16,7 +16,7 @@
                 <th>Spend</th>
                 <th>Country</th>
                 <th>Status</th>
-                <th>Cost per Click</th>
+                <th>Cost Per Click</th>
             </tr>
         </thead>
         <tbody>
@@ -31,13 +31,7 @@
                         <td>{{ insight['Spend'] }}</td>
                         <td>{{ insight['Country'] }}</td>
                         <td>{{ insight['Status'] }}</td>
-                        <td>
-                            {% if insight['Clicks'] and insight['Spend'] %}
-                                {{ (insight['Spend'] / insight['Clicks'])|round(2) }}
-                            {% else %}
-                                N/A
-                            {% endif %}
-                        </td>
+                        <td>{{ insight['Cost Per Click'] }}</td>
                     </tr>
                 {% endfor %}
             {% endfor %}
