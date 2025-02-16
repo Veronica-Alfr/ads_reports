@@ -12,7 +12,15 @@
     Finalizado ✅
     Ideias adicionais futuras: adicionar relatórios por gráficos 👩🏽‍💻🛠️🚀
 
+  <h2 align="center">Rodando o projeto 😃👩🏽‍💻🚀</h2>
 
+  <h3>Variáveis de Ambiente</h3>
+
+    👉 Crie um arquivo .env na raiz do projeto contendo as variáveis abaixo:
+
+    STRACT_API_TOKEN=ProcessoSeletivoStract2025
+    BASE_URL=https://sidebar.stract.to/api
+  
 <summary><h3>🐋 Rodando no Docker vs Localmente</h3></summary>
 
   <details>
